@@ -1,2 +1,5 @@
 praw
 langdetect
+ascii-graph
+numpy
+tqdm
