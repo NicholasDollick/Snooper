@@ -16,7 +16,7 @@ def driver_login():
                          password = secrets.password,
                          client_id = secrets.client_id,
                          client_secret = secrets.secret,
-                         user_agent = "dt user analyzer v0.3")
+                         user_agent = "dt user analyzer v0.4")
     return client
 
 def run_bot(driver):
@@ -49,7 +49,7 @@ def int_to_day(day):
 def analyze_by_day(user): # perhaps consider also account for posts by day
     dataset = {'Sunday': 0, 'Monday': 0, 'Tuesday': 0,
                'Wednesday': 0, 'Thursday': 0, 'Friday': 0, 'Saturday': 0}
-    comments_top = user.comments.top(limit=100)
+    comments_top = user.comments.top(limit=1500)
 
     for comment in comments_top:
         dataset[int_to_day(get_day(comment))] += 1
@@ -61,7 +61,7 @@ def analyze_by_hour(user):
                '09:00':0, '10:00':0, '11:00':0, '12:00':0, '13:00':0, '14:00':0, '15:00':0, '16:00':0, '17:00':0,
                '18:00':0, '19:00':0, '20:00':0, '21:00':0, '22:00':0, '23:00':0, '24:00':0
                }
-    comments_top = user.comments.top(limit=100)
+    comments_top = user.comments.top(limit=1500)
     for comment in comments_top:
         time = comment.created
         dataset[str(datetime.datetime.fromtimestamp(time))[11:13] + ":00"] += 1
@@ -94,12 +94,11 @@ def print_graph(dataset, title):
 
 def main(driver, target):
     user = driver.redditor(target)
-    print("[*] Getting /u/" + target + " account data")
+    print("[*] Getting /u/" + target + "'s account data")
     print("[+] Karma: " + str(user.comment_karma + user.link_karma) + " (Comment: "
           + str(user.comment_karma) + " Link: " + str(user.link_karma) + ")") # possibly split this into 2
     print("[+] Lang: " + detect(str((user.comments.top(limit=1)))))
     print("[+] Account Created: " + str(datetime.datetime.fromtimestamp(user.created_utc)))
-    #user_top_comments(user, 10)
     analyze_by_hour(user)
     analyze_by_day(user)
 
