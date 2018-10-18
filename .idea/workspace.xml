@@ -2,9 +2,6 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b9c5c06-81fe-460b-95d4-56f7798f6ed8" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/graphtest.py" beforeDir="false" />
       <change beforePath="$PROJECT_DIR$/reddit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/reddit_analyzer.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,7 +45,7 @@
           <entry key="dummy" value="16" />
           <entry key="gitignore" value="20" />
           <entry key="md" value="468" />
-          <entry key="py" value="6526" />
+          <entry key="py" value="6884" />
           <entry key="txt" value="20" />
         </counts>
       </usages-collector>
@@ -56,7 +53,7 @@
         <counts>
           <entry key="Markdown" value="468" />
           <entry key="PLAIN_TEXT" value="380" />
-          <entry key="Python" value="6526" />
+          <entry key="Python" value="6884" />
         </counts>
       </usages-collector>
     </session>
@@ -66,17 +63,17 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/reddit_analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="172">
-              <caret line="114" column="41" lean-forward="true" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
+            <state relative-caret-position="247">
+              <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
               <folding>
                 <element signature="e#53#68#0" expanded="true" />
-                <marker date="1539895275973" expanded="true" signature="2102:2103" ph="..." />
-                <marker date="1539895275973" expanded="true" signature="2102:2105" ph="..." />
-                <marker date="1539895275973" expanded="true" signature="2477:6071" ph="..." />
-                <marker date="1539895275973" expanded="true" signature="2762:2863" ph="..." />
-                <marker date="1539895275973" expanded="true" signature="3229:3736" ph="..." />
-                <marker date="1539895275973" expanded="true" signature="4278:4281" ph="..." />
-                <marker date="1539895275973" expanded="true" signature="6067:6071" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="2100:2101" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="2100:2103" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="2475:6257" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="2760:2861" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="3227:3734" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="4351:4354" ph="..." />
+                <marker date="1539898307225" expanded="true" signature="6253:6257" ph="..." />
               </folding>
             </state>
           </provider>
@@ -122,10 +119,10 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/test.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="465">
-              <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
+            <state relative-caret-position="30">
+              <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="70" />
               <folding>
-                <element signature="e#0#36#0" expanded="true" />
+                <marker date="1539897949079" expanded="true" signature="49:54" ph="..." />
               </folding>
             </state>
           </provider>
@@ -163,10 +160,10 @@
         <option value="$PROJECT_DIR$/main.py" />
         <option value="$PROJECT_DIR$/graphtest.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
-        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/TODO" />
+        <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/reddit_analyzer.py" />
       </list>
     </option>
@@ -211,7 +208,7 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Python.test">
+  <component name="RunManager" selected="Python.graphtest">
     <configuration name="graphtest" type="PythonConfigurationType" factoryName="Python" temporary="true">
       <module name="RedditRecon" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -282,9 +279,9 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.graphtest" />
         <item itemvalue="Python.test" />
         <item itemvalue="Python.main" />
-        <item itemvalue="Python.graphtest" />
       </list>
     </recent_temporary>
   </component>
@@ -314,7 +311,7 @@
     <frame x="0" y="27" width="1366" height="700" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.09910581" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.09910581" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -325,7 +322,7 @@
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" weight="0.32804233" />
       <window_info anchor="bottom" id="Version Control" order="7" />
-      <window_info anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3068783" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="8" visible="true" weight="0.3068783" />
       <window_info anchor="bottom" id="Event Log" order="9" side_tool="true" />
       <window_info anchor="bottom" id="Python Console" order="10" weight="0.17338003" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
@@ -338,23 +335,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/reddit_analyzer.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="172">
-          <caret line="114" column="41" lean-forward="true" selection-start-line="114" selection-start-column="41" selection-end-line="114" selection-end-column="41" />
-          <folding>
-            <element signature="e#53#68#0" expanded="true" />
-            <marker date="1539895275973" expanded="true" signature="2102:2103" ph="..." />
-            <marker date="1539895275973" expanded="true" signature="2102:2105" ph="..." />
-            <marker date="1539895275973" expanded="true" signature="2477:6071" ph="..." />
-            <marker date="1539895275973" expanded="true" signature="2762:2863" ph="..." />
-            <marker date="1539895275973" expanded="true" signature="3229:3736" ph="..." />
-            <marker date="1539895275973" expanded="true" signature="4278:4281" ph="..." />
-            <marker date="1539895275973" expanded="true" signature="6067:6071" ph="..." />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/README.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -384,20 +364,37 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="465">
-          <caret line="34" column="7" selection-start-line="34" selection-start-column="7" selection-end-line="34" selection-end-column="7" />
-          <folding>
-            <element signature="e#0#36#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
           <caret line="4" column="4" selection-start-line="4" selection-start-column="4" selection-end-line="4" selection-end-column="4" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="30">
+          <caret line="2" selection-start-line="2" selection-end-line="3" selection-end-column="70" />
+          <folding>
+            <marker date="1539897949079" expanded="true" signature="49:54" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/reddit_analyzer.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="247">
+          <caret line="49" column="60" selection-start-line="49" selection-start-column="60" selection-end-line="49" selection-end-column="60" />
+          <folding>
+            <element signature="e#53#68#0" expanded="true" />
+            <marker date="1539898307225" expanded="true" signature="2100:2101" ph="..." />
+            <marker date="1539898307225" expanded="true" signature="2100:2103" ph="..." />
+            <marker date="1539898307225" expanded="true" signature="2475:6257" ph="..." />
+            <marker date="1539898307225" expanded="true" signature="2760:2861" ph="..." />
+            <marker date="1539898307225" expanded="true" signature="3227:3734" ph="..." />
+            <marker date="1539898307225" expanded="true" signature="4351:4354" ph="..." />
+            <marker date="1539898307225" expanded="true" signature="6253:6257" ph="..." />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -13,7 +13,7 @@ import numpy as np
 from tqdm import tqdm
 import sys
 
-parser = argparse.ArgumentParser(description='Simple Reddit Profile Analyzer v.04',
+parser = argparse.ArgumentParser(description='Simple Reddit Profile Analyzer v.06',
                                  usage='reddit_analyzer.py -n <screen_name> [options]')
 
 parser.add_argument('-n', '--name', required=True, metavar="screen_name",
@@ -32,7 +32,7 @@ parser.add_argument('-e', '--export', metavar='path/to/file', type=str, help='ex
 
 parser.add_argument('-nc', '--no-color', action='store_true', help='disables colored output')
 
-parser.add_argument('-utc', '--utc-offset', type=int, help='manually apply a timezone offset (in seconds)')
+parser.add_argument('-utc', '--utc-offset', type=int, help='manually apply a timezone offset (from UTC)')
 
 parser.add_argument('-v', '--verbose', action='store_true', help='allow verbose analysis of collected data')
 
@@ -47,7 +47,7 @@ def driver_login():
                          password = secrets.password,
                          client_id = secrets.client_id,
                          client_secret = secrets.secret,
-                         user_agent = "dt user analyzer v0.4")
+                         user_agent = "dt user analyzer v0.6")
     return client
 
 def run_bot(driver):
@@ -111,11 +111,15 @@ def print_graph(dataset, title):
     for key in keys:
         chart.append((key, dataset[key]))
 
-    thresholds = {
-        int(mean): Gre, int(mean * 2): Yel, int(mean * 3): Red,
-    }
 
-    data = hcolor(chart, thresholds)
+    if(not args.no_color):
+        thresholds = {
+            int(mean): Gre, int(mean * 2): Yel, int(mean * 3): Red,
+        }
+
+        data = hcolor(chart, thresholds)
+    else:
+        data = chart
 
     for line in graph.graph(title, data):
         print(line)
@@ -160,6 +164,10 @@ def main(driver, target):
         graph_of = 'Comment '
 
     if(args.debug):
+        if(args.utc_offset != None):
+            print((args.utc_offset))
+        else:
+            print("uwu")
         sys.exit(0)
 
     print("[+] Karma: " + str(user.comment_karma + user.link_karma) + " (Comment: "
@@ -171,6 +179,9 @@ def main(driver, target):
 
 
 
-driver = driver_login()
-main(driver, args.name)
+try:
+    driver = driver_login()
+    main(driver, args.name)
+except Exception as e:
+    print(e)
 
