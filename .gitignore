@@ -3,3 +3,5 @@ venv
 secrets.pyc
 __pycache__
 TODO
+test.py
+test.pyc
