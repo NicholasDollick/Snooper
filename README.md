@@ -9,8 +9,8 @@ Next, create a file named _secrets.py_ in the same folder as reddit_analzer.py. 
 ```
 username  = 'your account username'
 password  = 'your account password'
-client_id = '### generated client id ###'
-secret    = '### generated secret key ###'
+client_id = 'generated client id'
+secret    = 'generated secret key'
 ```
 
 Finally, install requirements using:
@@ -22,3 +22,5 @@ pip install -r requirements.txt
 ```
 usage: tweets_analyzer.py -n <screen_name> [options]
 ```
+
+####Example Output
