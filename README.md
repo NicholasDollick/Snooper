@@ -20,7 +20,7 @@ pip install -r requirements.txt
 
 #### Usage
 ```
-usage: tweets_analyzer.py -n <screen_name> [options]
+usage: reddit_analyzer.py -n <screen_name> [options]
 options:
 -a --all              - gather dataset of both comments and posts
 -p --posts            - gather dataset of user's submitted posts
