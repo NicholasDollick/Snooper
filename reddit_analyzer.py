@@ -11,9 +11,8 @@ from ascii_graph.colors import Gre, Yel, Red
 from ascii_graph.colordata import hcolor
 import numpy as np
 from tqdm import tqdm
-import sys
 
-parser = argparse.ArgumentParser(description='Simple Reddit Profile Analyzer v.06',
+parser = argparse.ArgumentParser(description='Simple Reddit Profile Analyzer v1.0',
                                  usage='reddit_analyzer.py -n <screen_name> [options]')
 
 parser.add_argument('-n', '--name', required=True, metavar="screen_name",
@@ -32,13 +31,11 @@ parser.add_argument('-e', '--export', metavar='path/to/file', type=str, help='ex
 
 parser.add_argument('-nc', '--no-color', action='store_true', help='disables colored output')
 
-parser.add_argument('-utc', '--utc-offset', type=int, help='manually apply a timezone offset (from UTC)')
+parser.add_argument('-utc', '--utc-offset', type=int, help='manually apply a timezone offset (+- from UTC)')
 
 parser.add_argument('-v', '--verbose', action='store_true', help='allow verbose analysis of collected data')
 
-parser.add_argument('--new', action='store_true' ,help='')
-
-parser.add_argument('--debug', action='store_true')
+parser.add_argument('--new', action='store_true' ,help='gather dataset from posts sorted by new (default=top posts)')
 
 args = parser.parse_args()
 
@@ -47,7 +44,7 @@ def driver_login():
                          password = secrets.password,
                          client_id = secrets.client_id,
                          client_secret = secrets.secret,
-                         user_agent = "dt user analyzer v0.6")
+                         user_agent = "dt user analyzer v1.0")
     return client
 
 def run_bot(driver):
@@ -78,7 +75,7 @@ def int_to_day(day):
     test = "Monday Tuesday Wednesday Thursday Friday Saturday Sunday".split()
     return test[day]
 
-def analyze_by_day(data, chart_title): # perhaps consider also account for posts by day
+def analyze_by_day(data, chart_title):
     dataset = {'Sunday': 0, 'Monday': 0, 'Tuesday': 0,
                'Wednesday': 0, 'Thursday': 0, 'Friday': 0, 'Saturday': 0}
     for item in data:
@@ -91,9 +88,14 @@ def analyze_by_hour(data, chart_title):
                '09:00':0, '10:00':0, '11:00':0, '12:00':0, '13:00':0, '14:00':0, '15:00':0, '16:00':0, '17:00':0,
                '18:00':0, '19:00':0, '20:00':0, '21:00':0, '22:00':0, '23:00':0, '24:00':0
                }
+
     for item in data:
         time = item.created
-        dataset[str(datetime.datetime.fromtimestamp(time))[11:13] + ":00"] += 1
+        if(args.utc_offset != None): # convert from hours to seconds, apply timedelta, and format
+            dataset[str(datetime.datetime.fromtimestamp(time) + datetime.timedelta(
+                seconds=(3600*args.utc_offset)))[11:13] + ":00"] += 1
+        else:
+            dataset[str(datetime.datetime.fromtimestamp(time))[11:13] + ":00"] += 1
     print_graph(dataset, chart_title)
 
 
@@ -163,20 +165,12 @@ def main(driver, target):
             total_data = list(user.comments.top(limit=args.limit))
         graph_of = 'Comment '
 
-    if(args.debug):
-        if(args.utc_offset != None):
-            print((args.utc_offset))
-        else:
-            print("uwu")
-        sys.exit(0)
-
     print("[+] Karma: " + str(user.comment_karma + user.link_karma) + " (Comment: "
           + str(user.comment_karma) + " Link: " + str(user.link_karma) + ")") # possibly split this into 2
     print("[+] Lang: " + detect(str((user.comments.top(limit=1)))))
     print("[+] Account Created: " + str(datetime.datetime.fromtimestamp(user.created_utc)))
-    analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)') # this string needs to be decided by args
+    analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)') 
     analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
-
 
 
 try:

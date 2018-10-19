@@ -1,5 +1,5 @@
-praw
-langdetect
-ascii-graph
-numpy
+praw==6.0.0
+langdetect==1.0.7
+ascii-graph==1.5.1
+numpy==1.15.2
 tqdm
