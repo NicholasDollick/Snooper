@@ -169,7 +169,7 @@ def main(driver, target):
           + str(user.comment_karma) + " Link: " + str(user.link_karma) + ")") # possibly split this into 2
     print("[+] Lang: " + detect(str((user.comments.top(limit=1)))))
     print("[+] Account Created: " + str(datetime.datetime.fromtimestamp(user.created_utc)))
-    analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)') 
+    analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)')
     analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
 
 

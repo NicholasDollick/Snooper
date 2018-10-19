@@ -2,8 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="6b9c5c06-81fe-460b-95d4-56f7798f6ed8" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/TODO" beforeDir="false" afterPath="$PROJECT_DIR$/TODO" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/reddit_analyzer.py" beforeDir="false" afterPath="$PROJECT_DIR$/reddit_analyzer.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/requirements.txt" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +42,7 @@
       </usages-collector>
       <usages-collector id="statistics.file.extensions.edit">
         <counts>
-          <entry key="TODO" value="324" />
+          <entry key="TODO" value="552" />
           <entry key="dummy" value="16" />
           <entry key="gitignore" value="20" />
           <entry key="md" value="468" />
@@ -53,7 +53,7 @@
       <usages-collector id="statistics.file.types.edit">
         <counts>
           <entry key="Markdown" value="468" />
-          <entry key="PLAIN_TEXT" value="411" />
+          <entry key="PLAIN_TEXT" value="639" />
           <entry key="Python" value="7973" />
         </counts>
       </usages-collector>
@@ -61,20 +61,20 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/reddit_analyzer.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="192">
-              <caret line="171" column="79" selection-start-line="171" selection-start-column="79" selection-end-line="171" selection-end-column="79" />
+            <state relative-caret-position="300">
+              <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
               <folding>
                 <element signature="e#53#68#0" expanded="true" />
-                <marker date="1539907351583" expanded="true" signature="2098:2099" ph="..." />
-                <marker date="1539907351583" expanded="true" signature="2098:2101" ph="..." />
-                <marker date="1539907351583" expanded="true" signature="2473:6281" ph="..." />
-                <marker date="1539907351583" expanded="true" signature="2758:2859" ph="..." />
-                <marker date="1539907351583" expanded="true" signature="3176:3954" ph="..." />
-                <marker date="1539907351583" expanded="true" signature="4571:4574" ph="..." />
-                <marker date="1539907351583" expanded="true" signature="6278:6281" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="2098:2099" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="2098:2101" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="2473:6280" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="2758:2859" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="3176:3954" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="4571:4574" ph="..." />
+                <marker date="1539907512803" expanded="true" signature="6277:6280" ph="..." />
               </folding>
             </state>
           </provider>
@@ -108,11 +108,11 @@
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/TODO">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="60">
-              <caret line="4" column="82" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
+              <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
             </state>
           </provider>
         </entry>
@@ -159,10 +159,10 @@
         <option value="$PROJECT_DIR$/graphtest.py" />
         <option value="$PROJECT_DIR$/README.md" />
         <option value="$PROJECT_DIR$/.gitignore" />
-        <option value="$PROJECT_DIR$/TODO" />
         <option value="$PROJECT_DIR$/test.py" />
         <option value="$PROJECT_DIR$/requirements.txt" />
         <option value="$PROJECT_DIR$/reddit_analyzer.py" />
+        <option value="$PROJECT_DIR$/TODO" />
       </list>
     </option>
   </component>
@@ -333,13 +333,6 @@
   </component>
   <component name="editorHistoryManager">
     <entry file="file://$PROJECT_DIR$/test.py" />
-    <entry file="file://$PROJECT_DIR$/TODO">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="82" selection-start-line="4" selection-start-column="82" selection-end-line="4" selection-end-column="82" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/.gitignore">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="90">
@@ -362,13 +355,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/test.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="91" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="60">
@@ -378,18 +364,32 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/reddit_analyzer.py">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="192">
-          <caret line="171" column="79" selection-start-line="171" selection-start-column="79" selection-end-line="171" selection-end-column="79" />
+        <state relative-caret-position="300">
+          <caret line="173" lean-forward="true" selection-start-line="173" selection-end-line="173" />
           <folding>
             <element signature="e#53#68#0" expanded="true" />
-            <marker date="1539907351583" expanded="true" signature="2098:2099" ph="..." />
-            <marker date="1539907351583" expanded="true" signature="2098:2101" ph="..." />
-            <marker date="1539907351583" expanded="true" signature="2473:6281" ph="..." />
-            <marker date="1539907351583" expanded="true" signature="2758:2859" ph="..." />
-            <marker date="1539907351583" expanded="true" signature="3176:3954" ph="..." />
-            <marker date="1539907351583" expanded="true" signature="4571:4574" ph="..." />
-            <marker date="1539907351583" expanded="true" signature="6278:6281" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="2098:2099" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="2098:2101" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="2473:6280" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="2758:2859" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="3176:3954" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="4571:4574" ph="..." />
+            <marker date="1539907512803" expanded="true" signature="6277:6280" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="90">
+          <caret line="6" column="31" selection-start-line="6" selection-start-column="31" selection-end-line="6" selection-end-column="91" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/TODO">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="30" selection-start-line="4" selection-start-column="30" selection-end-line="4" selection-end-column="30" />
         </state>
       </provider>
     </entry>
