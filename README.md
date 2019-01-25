@@ -29,6 +29,8 @@ options:
 -l --limit            - set a max amount of posts collected (default=1000)
 --new                 - gather dataset from posts sorted by new (default=top posts)
 -utc --utc-offset     - offset time information to allign with timezone(+- UTC)
+-v --verbose          - allow verbose analysis of collected data
+-vn --verbose_num     - use in conjunction with -v to limit the amount of data returned (default=5)
 
 Examples: 
 reddit_analyzer.py -n mctesty
@@ -37,4 +39,4 @@ reddit_analyzer.py -n mctesty -utc -5 -nc -p
 ```
 
 #### Example Output
-![alt text](https://i.imgur.com/QX8yLF0.png)
+![alt text](https://i.imgur.com/mX9dvc5.png)

@@ -51,11 +51,6 @@ def driver_login():
                          user_agent = "dt user analyzer v1.5")
     return client
 
-def run_bot(driver): # currently unused
-    print('[*] Starting Search')
-    for comment in driver.subreddit('edm').comments(limit=25):
-        print("\n" + comment.body)
-
 def user_top_comments(user, max): # currently unused
     print('[*] Retrieving top ' + str(max) + ' comments')
     comments_top = user.comments.top(limit=max)
@@ -114,8 +109,8 @@ def get_subreddit(data):
 
 def most_common(item_list):
     data = Counter(item_list)
-    return data.most_common(2000) # returns all, possible messy af output in terminal. Collect all here
-                                  # edit displayed output in main(?)
+    return data.most_common(2000) # returns all
+
 def format_activity_breakdown(item_list):
     active_subs = []
 
@@ -198,12 +193,13 @@ def main(driver, target):
           + str(user.comment_karma) + " Link: " + str(user.link_karma) + ")") # possibly split this into 2
     print("[+] Lang: " + detect(str((user.comments.top(limit=1))))) # add method here to parse most likely correct language
     print("[+] Account Created: " + str(datetime.datetime.fromtimestamp(user.created_utc)))
+    
     if (args.verbose):
         active_in = format_activity_breakdown(get_subreddit(verbose_out))
         print("[+] Activity Breakdown: ")
-        for i in range(args.verbose_num): # manage amount printed out here
+        for i in range(args.verbose_num): 
             print '    - ' + active_in[i]
-        #return 
+
     analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)')
     analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
 
