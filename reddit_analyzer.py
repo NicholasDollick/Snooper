@@ -1,6 +1,3 @@
-# Usage:
-# python reddit_analyzer.py -n screen_name
-
 import argparse
 import praw
 import secrets
@@ -41,6 +38,9 @@ parser.add_argument('-vn', '--verbose_num', type=int, default=5,
 
 parser.add_argument('--new', action='store_true' , help='gather dataset from posts sorted by new (default=top posts)')
 
+parser.add_argument('--get',
+                    help='Collect all comments and posts from supplied subreddit')
+
 args = parser.parse_args()
 
 def driver_login():
@@ -48,7 +48,7 @@ def driver_login():
                          password = secrets.password,
                          client_id = secrets.client_id,
                          client_secret = secrets.secret,
-                         user_agent = "dt user analyzer v1.5")
+                         user_agent = "dt user analyzer v2.0")
     return client
 
 def user_top_comments(user, max): # currently unused
@@ -198,7 +198,7 @@ def main(driver, target):
         active_in = format_activity_breakdown(get_subreddit(verbose_out))
         print("[+] Activity Breakdown: ")
         for i in range(args.verbose_num): 
-            print '    - ' + active_in[i]
+            print ('    - ' + active_in[i])
 
     analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)')
     analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
@@ -207,7 +207,9 @@ def main(driver, target):
 if __name__ == "__main__":
     try:
         driver = driver_login()
-        main(driver, args.name)
+        # main(driver, args.name)
+        if args.get != None:
+            print(args.get)
+        print('exit')
     except Exception as e:
         print(e)
-
