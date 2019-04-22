@@ -229,6 +229,5 @@ if __name__ == "__main__":
     try:
         driver = driver_login()
         main(driver, args.name)
-
     except Exception as e:
         print(e)

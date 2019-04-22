@@ -27,6 +27,7 @@ pip install -r requirements.txt
 ```
 usage: snooper.py -n <screen_name> [options]
 options:
+-h --help             - show this help message and exit
 -a --all              - gather dataset of both comments and posts
 -p --posts            - gather dataset of user's submitted posts
 -c --comments         - gather dataset of user's comments
@@ -36,6 +37,8 @@ options:
 -utc --utc-offset     - offset time information to allign with timezone(+- UTC)
 -v --verbose          - allow verbose analysis of collected data
 -vn --verbose_num     - use in conjunction with -v to limit the amount of data returned (default=5)
+--get                 - collect all comments and posts from supplied subreddit
+-ng --no-graph        - disable printing of graph analyzation
 
 Examples: 
 snooper.py -n mctesty
