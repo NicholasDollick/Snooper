@@ -41,6 +41,7 @@ Examples:
 snooper.py -n mctesty
 snooper.py -n mctesty -a --new -l 100
 snooper.py -n mctesty -utc -5 -nc -p
+snooper.py -n mctesty -v -vn 10
 ```
 
 #### Example Output
