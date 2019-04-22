@@ -52,13 +52,26 @@ def driver_login():
     return client
 
 def get_comments_from(user, subreddit):
-    for comment in user.comments.top(limit=5):
+    for comment in user.comments.top():
         if str(comment.subreddit).lower() == subreddit.lower():
             print() # for a more visually pleasing formatting
             print(datetime.datetime.utcfromtimestamp(comment.created_utc))
             print("--------------------------------------------")
             print(comment.body)
             print("--------------------------------------------\n")
+
+def get_posts_from(user, subreddit):
+    for post in user.submissions.top():
+        if str(post.subreddit).lower() == subreddit.lower():
+            print(post.title)
+            if post.selftext == '':
+                print("--------------------------------------------")
+                print(post.url)
+                print("--------------------------------------------\n")
+            else:
+                print("--------------------------------------------")
+                print(post.selftext)
+                print("--------------------------------------------\n")
 
 def get_date(item):
     time = item.created
@@ -110,14 +123,6 @@ def get_subreddit(data):
 def most_common(item_list):
     data = Counter(item_list)
     return data.most_common(2000) # returns all
-
-
-def post_from_sub(user, subreddit):
-    for thing in user.submissions.top(limit=5):
-        if str(thing.subreddit).lower() == subreddit.lower():
-            print(thing.title)
-            print(thing.selftext)
-
 
 def format_activity_breakdown(item_list):
     active_subs = []
@@ -212,14 +217,14 @@ def main(driver, target):
     analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
 
     if args.get != None:
-        print(args.get)
+        get_comments_from(user, args.get)
+        get_posts_from(user, args.get)
 
 
 if __name__ == "__main__":
     try:
         driver = driver_login()
-        # main(driver, args.name)
-        get_comments_from(driver.redditor(args.name), 'EDM')
+        main(driver, args.name)
 
     except Exception as e:
         print(e)
