@@ -127,7 +127,7 @@ def print_graph(dataset, title):
     chart = []
     keys = sorted(dataset.keys())
     mean = np.mean(list(dataset.values()))
-    #median = np.median(list(dataset.values()))
+    # median = np.median(list(dataset.values()))
 
     for key in keys:
         chart.append((key, dataset[key]))
@@ -190,7 +190,7 @@ def main(driver, target):
         graph_of = 'Comment '
 
     print("[+] Karma: " + str(user.comment_karma + user.link_karma) + " (Comment: "
-          + str(user.comment_karma) + " Link: " + str(user.link_karma) + ")") # possibly split this into 2
+          + str(user.comment_karma) + " Link: " + str(user.link_karma) + ")") 
     print("[+] Lang: " + detect(str((user.comments.top(limit=1))))) # add method here to parse most likely correct language
     print("[+] Account Created: " + str(datetime.datetime.fromtimestamp(user.created_utc)))
     
@@ -203,13 +203,13 @@ def main(driver, target):
     analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)')
     analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
 
+    if args.get != None:
+        print(args.get)
+
 
 if __name__ == "__main__":
     try:
         driver = driver_login()
         # main(driver, args.name)
-        if args.get != None:
-            print(args.get)
-        print('exit')
     except Exception as e:
         print(e)
