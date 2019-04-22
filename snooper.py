@@ -10,7 +10,7 @@ import numpy as np
 from tqdm import tqdm
 from collections import Counter
 
-parser = argparse.ArgumentParser(description='Simple Reddit Profile Analyzer v1.0',
+parser = argparse.ArgumentParser(description='Simple Reddit Profile Analyzer v2.0',
                                  usage='reddit_analyzer.py -n <screen_name> [options]')
 
 parser.add_argument('-n', '--name', required=True, metavar="screen_name",
@@ -40,6 +40,9 @@ parser.add_argument('--new', action='store_true' , help='gather dataset from pos
 
 parser.add_argument('--get',
                     help='Collect all comments and posts from supplied subreddit')
+
+parser.add_argument('-ng', '--no-graph', action='store_true',
+                    help='Disable printing of graph analyzation')
 
 args = parser.parse_args()
 
@@ -213,8 +216,9 @@ def main(driver, target):
         for i in range(args.verbose_num): 
             print ('    - ' + active_in[i])
 
-    analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)')
-    analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
+    if (not args.no_graph):
+        analyze_by_hour(total_data, graph_of + 'activity distribution (per hour)')
+        analyze_by_day(total_data, graph_of + 'activity distribution (per day)')
 
     if args.get != None:
         get_comments_from(user, args.get)
