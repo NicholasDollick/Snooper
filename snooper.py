@@ -51,14 +51,14 @@ def driver_login():
                          user_agent = "dt user analyzer v2.0")
     return client
 
-def user_top_comments(user, max): # currently unused
-    print('[*] Retrieving top ' + str(max) + ' comments')
-    comments_top = user.comments.top(limit=max)
-    for comment in comments_top:
-        print("\n--------------------------------------------")
-        print(comment.body)
-        get_day(comment)
-        print("--------------------------------------------")
+def get_comments_from(user, subreddit):
+    for comment in user.comments.top(limit=5):
+        if str(comment.subreddit).lower() == subreddit.lower():
+            print() # for a more visually pleasing formatting
+            print(datetime.datetime.utcfromtimestamp(comment.created_utc))
+            print("--------------------------------------------")
+            print(comment.body)
+            print("--------------------------------------------\n")
 
 def get_date(item):
     time = item.created
@@ -110,6 +110,14 @@ def get_subreddit(data):
 def most_common(item_list):
     data = Counter(item_list)
     return data.most_common(2000) # returns all
+
+
+def post_from_sub(user, subreddit):
+    for thing in user.submissions.top(limit=5):
+        if str(thing.subreddit).lower() == subreddit.lower():
+            print(thing.title)
+            print(thing.selftext)
+
 
 def format_activity_breakdown(item_list):
     active_subs = []
@@ -211,5 +219,7 @@ if __name__ == "__main__":
     try:
         driver = driver_login()
         # main(driver, args.name)
+        get_comments_from(driver.redditor(args.name), 'EDM')
+
     except Exception as e:
         print(e)
